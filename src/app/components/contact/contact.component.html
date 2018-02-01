@@ -7,11 +7,4 @@
   <li>Email: {{ contact.email }}</li>
   <li>Phone: {{ contact.phone }}</li>
 </ul>
-<div>
-  <input type="text" name="name" placeholder="Name" [(ngModel)]="contact.name">
-  <input type="email" name="email" placeholder="name@domain.be" [(ngModel)]="contact.email">
-  <input type="tel" name="phone" placeholder="Phone Number" [(ngModel)]="contact.phone">
-  <input type="checkbox" name="favorite" id="favorite" [(ngModel)]="contact.isFavorite">
-  <label for="favorite" [class.favorite]="contact.isFavorite">Favorite</label><br>
-  <button type="submit" (click)="submit()">Submit</button>
-</div>
+

@@ -28,7 +28,7 @@ export class AppComponent {
     ];
   }
 
-  handleData(event: Contact){
-    console.log('Received data!', event);
+  createContact(event: Contact) {
+    this.contactList.push(event);
   }
 }
