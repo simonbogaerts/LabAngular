@@ -1,8 +1,7 @@
 <header><h1>Contacts</h1></header>
 <main>
-  <app-contact></app-contact>
-  <app-contact></app-contact>
-  <app-contact></app-contact>
+  <app-contact [contact]="myContact"
+  (onSubmit)="handleData($event)"></app-contact>
 </main>
 
 
