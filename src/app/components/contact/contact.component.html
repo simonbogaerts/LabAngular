@@ -1,4 +1,8 @@
-<h2>{{ contact.name }}</h2>
+<h2>
+  <span *ngIf="contact.isFavorite" class="favorite">&#9733;</span>
+  {{ contact.name }}
+</h2>
+<img [src]="contact.avatar" alt="avatar">
 <ul>
   <li>Email: {{ contact.email }}</li>
   <li>Phone: {{ contact.phone }}</li>
@@ -8,6 +12,6 @@
   <input type="email" name="email" placeholder="name@domain.be" [(ngModel)]="contact.email">
   <input type="tel" name="phone" placeholder="Phone Number" [(ngModel)]="contact.phone">
   <input type="checkbox" name="favorite" id="favorite" [(ngModel)]="contact.isFavorite">
-  <label for="favorite">Favorite</label><br>
+  <label for="favorite" [class.favorite]="contact.isFavorite">Favorite</label><br>
   <button type="submit" (click)="submit()">Submit</button>
 </div>
