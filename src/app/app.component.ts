@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Contact } from './models/contact.model';
+import {ContactService} from './services/contact.service';
 
 @Component({
   selector: 'app-root',
@@ -8,27 +9,18 @@ import { Contact } from './models/contact.model';
 })
 export class AppComponent {
   contactList: Contact[];
+  constructor(private service: ContactService) {}
 
-  ngOnInit() {
-    this.contactList = [
-      new Contact (
-        'John Doe',
-        'john.doe@gmail.be',
-        '+32 (0) 000 00 00 00',
-        false,
-        'assets/avatar.png'
-      ),
-      new Contact (
-        'Jane Doe',
-        'jane.doe@gmail.be',
-        '+32 (0) 000 00 00 00',
-        true,
-        'assets/avatar.png'
-      )
-    ];
+  ngOnInit(): void {
+    this.contactList = this.service.getContactList();
   }
 
   createContact(event: Contact) {
-    this.contactList.push(event);
+    this.service.addContact(event);
+    this.contactList = this.service.getContactList();
+  }
+
+  handleUpdate(): void {
+    this.contactList = this.service.getContactList();
   }
 }
