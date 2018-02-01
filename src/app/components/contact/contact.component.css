@@ -1,8 +1,3 @@
-:host.isLink:hover {
-  background: #27ae60;
-  color: #fff;
-  cursor: pointer;
-}
 :host {
   padding: 1rem;
   margin: 0.5rem;
@@ -65,4 +60,9 @@ button:focus {
   float: left;
   margin-right: 0.5rem;
   width: 50px;
+}
+:host.isLink:hover {
+  background: #27ae60;
+  color: #fff;
+  cursor: pointer;
 }

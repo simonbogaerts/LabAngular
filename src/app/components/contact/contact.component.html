@@ -2,10 +2,10 @@
   <span *ngIf="contact.isFavorite" class="favorite">&#9733;</span>
   {{ contact.name }}
 </h2>
-<img [src]="contact.avatar" alt="avatar">
+<img [src]="contact.avatar" alt="avatar" class="avatar">
 <ul>
   <li>Email: {{ contact.email }}</li>
   <li>Phone: {{ contact.phone }}</li>
 </ul>
-<input type="checkbox" name="isFavorite" id="isFavorite" [(ngModel)]="contact.isFavorite" (click)="toggleFavorite(index)">
+<input type="checkbox" name="isFavorite" id="isFavorite" [(ngModel)]="contact.isFavorite" (click)="toggleFavorite(contact.id, contact.isFavorite)">
 <label for="isFavorite" [class.favorite]="contact.isFavorite">Favorite</label>

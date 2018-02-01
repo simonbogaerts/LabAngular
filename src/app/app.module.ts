@@ -7,6 +7,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { ContactService } from './services/contact.service';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ContactService } from './services/contact.service';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
   providers: [ContactService],
   bootstrap: [AppComponent]
