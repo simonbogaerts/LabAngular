@@ -8,13 +8,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { ContactService } from './services/contact.service';
 import { HttpModule } from '@angular/http';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,

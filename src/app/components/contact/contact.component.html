@@ -1,6 +1,6 @@
 <h2>
   <span *ngIf="contact.isFavorite" class="favorite">&#9733;</span>
-  {{ contact.name }}
+  {{ contact.name | capitalize }}
 </h2>
 <img [src]="contact.avatar" alt="avatar" class="avatar">
 <ul>
