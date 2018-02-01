@@ -9,6 +9,11 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
 import { ContactService } from './services/contact.service';
 import { HttpModule } from '@angular/http';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
+import {RouterModule} from '@angular/router';
+import {appRoutes} from './app.routes';
+import { ContactListComponent } from './components/contact-list/contact-list.component';
+import { AddContactComponent } from './components/add-contact/add-contact.component';
+import { ContactDetailComponent } from './components/contact-detail/contact-detail.component';
 
 
 @NgModule({
@@ -16,13 +21,17 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
     AppComponent,
     ContactComponent,
     ContactFormComponent,
-    CapitalizePipe
+    CapitalizePipe,
+    ContactListComponent,
+    AddContactComponent,
+    ContactDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [ContactService],
   bootstrap: [AppComponent]

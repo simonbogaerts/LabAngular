@@ -50,7 +50,21 @@ export class ContactService {
       .catch(this.onError);
   }
   updateContact(id: string, data: any): Observable<any> {
-    let url: string = CONTACTAPIURL + id + '.json';
+    let url = `${CONTACTAPIURL}${id}.json`;
     return this.http.patch(url, data).catch(this.onError);
+  }
+
+  getContact(id: string) {
+    let url = `${CONTACTAPIURL}${id}.json`;
+    return this.http.get(url)
+      .map(res => res.json())
+      .map(data => new Contact(data.name, data.email,
+        data.phone, data.isFavorite, data.avatar, id))
+      .catch(this.onError);
+  }
+
+  deleteContact(id: string) {
+    let url = `${CONTACTAPIURL}${id}.json`;
+    return this.http.delete(url).catch(this.onError);
   }
 }

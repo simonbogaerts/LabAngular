@@ -1,11 +1,15 @@
-<header><h1>Contacts</h1></header>
-<main>
-  <button type="button" [class.onlyFavorites]="onlyFavorites" (click)="toggleView(onlyFavorites)">Show {{ onlyFavorites ? 'All' : 'Favorites' }} </button>
-  <app-contact *ngFor="let contact of contactList; let i = index"
-               [contact]="contact"
-               (onUpdate)="handleUpdate($event)">
-  </app-contact>
-  <app-contact-form (onSubmit)="createContact($event)"></app-contact-form>
-</main>
+<nav>
+  <ul>
+    <li><a routerLink="/list"
+           [routerLinkActive]="'current'" title="List">List</a></li>
+    <li><a routerLink="/add"
+           [routerLinkActive]="'current'" title="Add contact">Add
+      contact</a></li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
+
+
 
 

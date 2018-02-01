@@ -15,7 +15,9 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
   }
 
-  toggleFavorite(id: string, isFavorite: boolean): void {
-    this.service.updateContact(id, {isFavorite: isFavorite}).subscribe(() => this.onUpdate.emit);
+  toggleFavorite(event: any, id: string, isFavorite: boolean): void {
+    event.stopPropagation();
+    this.service.updateContact(id, {isFavorite:
+      !isFavorite}).subscribe(() => this.onUpdate.emit);
   }
 }
